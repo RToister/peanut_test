@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BLADE Barbershop — чоловічі стрижки у Львові</title>
+<meta name="description" content="Барбершоп BLADE: стрижки, борода, королівське гоління. Онлайн-запис.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f0f0f;--card:#1a1a1a;--line:#2a2a2a;--text:#eee;--muted:#9a9a9a;--accent:#c8a96a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+h1,h2,h3,.logo{font-family:Oswald,sans-serif;text-transform:uppercase;letter-spacing:.04em}
+header{position:sticky;top:0;background:rgba(15,15,15,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-size:24px;font-weight:700}.logo span{color:var(--accent)}
+nav a{margin-left:24px;color:var(--muted);font-size:14px}nav a:hover{color:var(--accent)}
+.btn{display:inline-block;background:var(--accent);color:#111;font-weight:600;padding:14px 28px;border-radius:4px;border:0;cursor:pointer;font-size:16px}
+.btn:hover{filter:brightness(1.1)}
+.hero{min-height:88vh;display:flex;align-items:center;background:radial-gradient(circle at 75% 30%,#3a2f1c 0,transparent 55%),linear-gradient(160deg,#0f0f0f 40%,#1c1712)}
+.hero h1{font-size:clamp(40px,8vw,84px);line-height:1.05;margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{color:var(--muted);max-width:520px;margin-bottom:32px;font-size:18px}
+section{padding:90px 0}
+h2{font-size:clamp(30px,5vw,44px);margin-bottom:40px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.price{background:var(--card);border:1px solid var(--line);padding:28px;border-radius:6px}
+.price h3{font-size:20px;margin-bottom:6px}.price p{color:var(--muted);font-size:14px;margin-bottom:16px}
+.price b{font-family:Oswald;font-size:30px;color:var(--accent)}
+.team .m{background:var(--card);border-radius:6px;overflow:hidden;border:1px solid var(--line)}
+.team .ph{height:220px;display:flex;align-items:center;justify-content:center;font:700 64px Oswald;color:var(--accent);background:linear-gradient(135deg,#2a2419,#141414)}
+.team .m div:last-child{padding:20px}.team small{color:var(--muted)}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;text-align:center}
+.why b{display:block;font:700 48px Oswald;color:var(--accent)}
+.why span{color:var(--muted)}
+form{display:grid;gap:14px;max-width:480px}
+input,select{background:var(--card);border:1px solid var(--line);color:var(--text);padding:14px;border-radius:4px;font:inherit}
+.book{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.contacts p{margin-bottom:14px;color:var(--muted)}.contacts b{color:var(--text)}
+.ok{display:none;color:var(--accent);font-weight:600}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:14px;text-align:center}
+@media(max-width:760px){nav{display:none}.book{grid-template-columns:1fr}section{padding:60px 0}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="logo" href="#">BLA<span>DE</span></a>
+<nav><a href="#prices">Послуги</a><a href="#team">Майстри</a><a href="#book">Запис</a></nav>
+<a class="btn" href="#book" style="padding:10px 18px;font-size:14px">Записатись</a></div></header>
+
+<section class="hero"><div class="wrap">
+<h1>Стрижка, яка<br><em>говорить</em> за тебе</h1>
+<p>Чоловічий барбершоп у центрі Львова. Класичні та сучасні стрижки, догляд за бородою, королівське гоління.</p>
+<a class="btn" href="#book">Записатись онлайн</a>
+</div></section>
+
+<section id="prices"><div class="wrap">
+<h2>Послуги та ціни</h2>
+<div class="grid">
+<div class="price"><h3>Чоловіча стрижка</h3><p>Миття, стрижка, укладка</p><b>450 ₴</b></div>
+<div class="price"><h3>Борода</h3><p>Моделювання та догляд</p><b>300 ₴</b></div>
+<div class="price"><h3>Стрижка + борода</h3><p>Повний комплекс</p><b>650 ₴</b></div>
+<div class="price"><h3>Королівське гоління</h3><p>Гарячий рушник, небезпечна бритва</p><b>400 ₴</b></div>
+</div></div></section>
+
+<section id="team" style="background:#131313"><div class="wrap">
+<h2>Наші майстри</h2>
+<div class="grid team">
+<div class="m"><div class="ph">А</div><div><h3>Андрій</h3><small>Топ-барбер · 8 років досвіду</small></div></div>
+<div class="m"><div class="ph">М</div><div><h3>Максим</h3><small>Барбер · фейди та текстура</small></div></div>
+<div class="m"><div class="ph">О</div><div><h3>Олег</h3><small>Барбер · класика та гоління</small></div></div>
+</div></div></section>
+
+<section><div class="wrap why">
+<div><b>5 000+</b><span>задоволених клієнтів</span></div>
+<div><b>4.9 ★</b><span>рейтинг у Google</span></div>
+<div><b>7 днів</b><span>на тиждень, 9:00–21:00</span></div>
+</div></section>
+
+<section id="book" style="background:#131313"><div class="wrap book">
+<div><h2>Онлайн-запис</h2>
+<form onsubmit="event.preventDefault();this.reset();document.querySelector('.ok').style.display='block'">
+<input required placeholder="Ваше ім'я">
+<input required type="tel" placeholder="Телефон">
+<select><option>Чоловіча стрижка</option><option>Борода</option><option>Стрижка + борода</option><option>Королівське гоління</option></select>
+<input type="date" required>
+<button class="btn">Записатись</button>
+<p class="ok">Дякуємо! Ми зателефонуємо вам для підтвердження.</p>
+</form></div>
+<div class="contacts"><h2>Контакти</h2>
+<p><b>Адреса:</b><br>м. Львів, вул. Прикладна, 12</p>
+<p><b>Телефон:</b><br>+38 (0XX) XXX-XX-XX</p>
+<p><b>Графік:</b><br>Щодня 9:00–21:00</p>
+<p><b>Instagram:</b><br>@blade.barbershop</p>
+</div></div></section>
+
+<footer>© BLADE Barbershop · Демо-сайт</footer>
+</body>
+</html>
