@@ -61,6 +61,11 @@ h2{font-size:clamp(34px,5.5vw,64px);line-height:1.02;font-weight:700;margin-bott
 .tli b{font:700 18px Geologica;color:var(--a2)}
 .tli h3{font-size:22px;margin-bottom:6px}.tli p{color:var(--muted);font-size:15px}
 .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center}
+.hg{display:grid;grid-template-columns:1.35fr .65fr;gap:50px;align-items:center}.hg h1{font-size:clamp(42px,6.2vw,86px)}
+.hph{aspect-ratio:3/4;border-radius:30px;background:center/cover;position:relative;border:1px solid var(--line);box-shadow:0 30px 80px rgba(124,92,255,.25)}
+.tagc{position:absolute;left:-24px;bottom:30px;background:rgba(16,18,26,.85);backdrop-filter:blur(10px);border:1px solid var(--line);padding:12px 18px;border-radius:14px;font-size:14px}
+.strip{overflow:hidden;padding:0 0 120px}.strip div{display:flex;gap:16px;width:max-content;animation:mq 45s linear infinite}.strip i{width:300px;height:210px;border-radius:20px;background:center/cover;flex:none;filter:grayscale(.3)}
+.who{display:flex;align-items:center;gap:12px;margin-top:24px}.who small{display:block;color:var(--muted);font-size:13px}.av{width:48px;height:48px;border-radius:50%;background:center/cover;flex:none;border:2px solid var(--a1)}
 .ph{aspect-ratio:4/5;border-radius:28px;background:center/cover;position:relative;overflow:hidden;border:1px solid var(--line)}
 .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(124,92,255,.55))}
 .ph span{position:absolute;left:24px;bottom:20px;z-index:1;font:700 22px Geologica}
@@ -72,7 +77,7 @@ footer{text-align:center;color:#4a4f63;font-size:14px;padding:40px 0}
 .r{opacity:0;transform:translateY(40px) scale(.98);filter:blur(6px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1),filter .9s}
 .r.in{opacity:1;transform:none;filter:none}
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
-@media(max-width:820px){.about{grid-template-columns:1fr}.ph{max-width:420px}.banner{height:200px}.bento,.res{grid-template-columns:1fr 1fr}.box.w{grid-column:span 2}.tli{grid-template-columns:1fr;gap:8px}section{padding:80px 0}.o1{width:300px;height:300px}}
+@media(max-width:820px){.hg{grid-template-columns:1fr}.hph{max-width:320px}.tagc{left:12px}.strip i{width:220px;height:160px}.about{grid-template-columns:1fr}.ph{max-width:420px}.banner{height:200px}.bento,.res{grid-template-columns:1fr 1fr}.box.w{grid-column:span 2}.tli{grid-template-columns:1fr;gap:8px}section{padding:80px 0}.o1{width:300px;height:300px}}
 @media(max-width:520px){.bento,.res{grid-template-columns:1fr}.box.w{grid-column:auto}.big{font-size:56px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;transform:none;filter:none}}
 </style>
@@ -81,26 +86,26 @@ footer{text-align:center;color:#4a4f63;font-size:14px;padding:40px 0}
 <header><div class="wrap"><a class="logo" href="#">savchuk<span class="grad">.coach</span></a><a class="btn sm" href="#book">Стратегічна сесія</a></div></header>
 
 <div class="hero"><div class="gridbg"></div><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
-<div class="wrap">
+<div class="wrap hg"><div>
 <span class="pill r">⚡ Бізнес-коучинг для власників і CEO</span>
 <h1 class="r d1">Виведіть бізнес на <span class="grad">наступний рівень</span></h1>
 <p class="r d2">Допомагаю власникам вийти з операційки, вибудувати сильну команду та подвоїти прибуток за 6 місяців.</p>
 <div class="row r d3"><a class="btn" href="#book">Безкоштовна сесія →</a><a class="btn ghost" href="#cases">Результати клієнтів</a></div>
-</div></div>
+</div><div class="hph r d2" style="background-image:url('https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&h=1000&q=80&auto=format&fit=crop')"><span class="tagc">ICF · 12 років досвіду</span></div></div></div>
 
 <div class="logos"><div><span>NOVA</span><span>agro.ua</span><span>BRIGHT</span><span>Shift</span><span>Kyiv Digital</span><span>VECTOR</span><span>NOVA</span><span>agro.ua</span><span>BRIGHT</span><span>Shift</span><span>Kyiv Digital</span><span>VECTOR</span></div></div>
 
 <section><div class="wrap">
 <h2 class="r">Що ви отримаєте <span class="grad">в роботі зі мною</span></h2>
 <div class="bento">
-<div class="box w r"><div class="ic">🎯</div><h3>Чітка стратегія</h3><p>Разом визначимо, куди рухається бізнес, і розкладемо ціль на конкретні квартальні кроки з цифрами.</p></div>
+<div class="box w r" style="background:linear-gradient(90deg,#10121a 30%,rgba(16,18,26,.35)),url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1000&h=500&q=80&auto=format&fit=crop') center/cover"><div class="ic">🎯</div><h3>Чітка стратегія</h3><p>Разом визначимо, куди рухається бізнес, і розкладемо ціль на конкретні квартальні кроки з цифрами.</p></div>
 <div class="box r d1"><div class="big grad">×2</div><p style="margin-top:14px">середнє зростання прибутку клієнтів за рік</p></div>
-<div class="box r"><div class="ic">👥</div><h3>Сильна команда</h3><p>Делегування, KPI та найм людей, яким можна довіряти.</p></div>
-<div class="box w r d1"><div class="ic">⏱</div><h3>Ваш час — назад</h3><p>Вийдете з операційки: бізнес працює, навіть коли ви у відпустці. Більше часу на стратегію, сім'ю та себе.</p></div>
+<div class="box r" style="background:linear-gradient(rgba(16,18,26,.55),#10121a 75%),url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=600&q=80&auto=format&fit=crop') center/cover"><div class="ic">👥</div><h3>Сильна команда</h3><p>Делегування, KPI та найм людей, яким можна довіряти.</p></div>
+<div class="box w r d1" style="background:linear-gradient(90deg,#10121a 35%,rgba(16,18,26,.3)),url('https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=1000&h=500&q=80&auto=format&fit=crop') center/cover"><div class="ic">⏱</div><h3>Ваш час — назад</h3><p>Вийдете з операційки: бізнес працює, навіть коли ви у відпустці. Більше часу на стратегію, сім'ю та себе.</p></div>
 </div></div></section>
 
 <section style="padding-top:0"><div class="wrap about">
-<div class="ph r" style="background-image:url('https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&h=1000&q=80&auto=format&fit=crop')"><span>Дмитро Савчук</span></div>
+<div class="ph r" style="background-image:url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=1000&q=80&auto=format&fit=crop')"><span>Виступ на Business Forum</span></div>
 <div><h2 class="r" style="margin-bottom:24px">Я пройшов цей шлях <span class="grad">сам</span></h2>
 <p class="r" style="color:var(--muted);margin-bottom:18px">12 років керую компаніями, побудував 4 бізнеси з нуля — і знаю, як це: працювати по 14 годин і все одно не встигати.</p>
 <p class="r" style="color:var(--muted)">Сертифікований коуч ICF. Працюю з власниками малого та середнього бізнесу, які хочуть рости без вигорання.</p></div>
@@ -114,6 +119,10 @@ footer{text-align:center;color:#4a4f63;font-size:14px;padding:40px 0}
 <div class="r d3"><b data-c="4">0</b><span>власні компанії</span></div>
 </div></div></section>
 
+<div class="strip"><div>
+<i style="background-image:url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&h=420&q=80&auto=format&fit=crop')"></i><i style="background-image:url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600&h=420&q=80&auto=format&fit=crop')"></i><i style="background-image:url('https://images.unsplash.com/photo-1543269865-cbf427effbad?w=600&h=420&q=80&auto=format&fit=crop')"></i><i style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&h=420&q=80&auto=format&fit=crop')"></i><i style="background-image:url('https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=600&h=420&q=80&auto=format&fit=crop')"></i><i style="background-image:url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=600&h=420&q=80&auto=format&fit=crop')"></i><i style="background-image:url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&h=420&q=80&auto=format&fit=crop')"></i><i style="background-image:url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600&h=420&q=80&auto=format&fit=crop')"></i><i style="background-image:url('https://images.unsplash.com/photo-1543269865-cbf427effbad?w=600&h=420&q=80&auto=format&fit=crop')"></i><i style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&h=420&q=80&auto=format&fit=crop')"></i><i style="background-image:url('https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=600&h=420&q=80&auto=format&fit=crop')"></i><i style="background-image:url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=600&h=420&q=80&auto=format&fit=crop')"></i>
+</div></div>
+
 <section style="padding-top:0"><div class="wrap">
 <h2 class="r">Як проходить <span class="grad">програма</span></h2>
 <div class="banner r" style="background-image:linear-gradient(90deg,rgba(7,8,12,.85),rgba(7,8,12,.2)),url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=700&q=80&auto=format&fit=crop')"><b>Сесії онлайн та офлайн у Києві</b></div>
@@ -121,6 +130,14 @@ footer{text-align:center;color:#4a4f63;font-size:14px;padding:40px 0}
 <div class="tli r"><b>Тиждень 1</b><div><h3>Діагностика</h3><p>Аналіз бізнесу, фінансів і команди. Знаходимо точки росту.</p></div></div>
 <div class="tli r"><b>Місяць 1–2</b><div><h3>Стратегія та система</h3><p>Цілі, KPI, оргструктура, регламенти.</p></div></div>
 <div class="tli r"><b>Місяць 3–6</b><div><h3>Впровадження</h3><p>Щотижневі сесії, контроль, коригування. Результат — у цифрах.</p></div></div>
+</div></div></section>
+
+<section style="padding-top:0"><div class="wrap">
+<h2 class="r">Що кажуть <span class="grad">клієнти</span></h2>
+<div class="bento">
+<div class="box r"><p>«За 5 місяців вийшов з операційки і вперше за 3 роки поїхав у відпустку на 2 тижні. Бізнес виріс на 40%.»</p><div class="who"><span class="av" style="background-image:url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=160&h=160&q=80&auto=format&fit=crop&crop=faces')"></span><div><b>Ігор Петренко</b><small>власник мережі СТО</small></div></div></div>
+<div class="box r d1"><p>«Нарешті з'явилась стратегія і команда, яка працює без мене. Прибуток ×2 за рік.»</p><div class="who"><span class="av" style="background-image:url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=160&h=160&q=80&auto=format&fit=crop&crop=faces')"></span><div><b>Анна Кравець</b><small>CEO digital-агенції</small></div></div></div>
+<div class="box r d2"><p>«Дмитро ставить незручні питання — і саме вони змінили мій бізнес.»</p><div class="who"><span class="av" style="background-image:url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=160&h=160&q=80&auto=format&fit=crop&crop=faces')"></span><div><b>Максим Лисенко</b><small>засновник агрокомпанії</small></div></div></div>
 </div></div></section>
 
 <section id="book" style="padding-top:0"><div class="wrap"><div class="cta r">

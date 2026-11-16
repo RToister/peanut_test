@@ -61,6 +61,9 @@ h2 em{color:var(--rose)}
 .rv{width:340px;flex:none;background:var(--card);border:1px solid rgba(255,255,255,.9);border-radius:24px;padding:28px;font:italic 20px/1.4 "Cormorant Garamond"}
 .rv small{display:block;margin-top:16px;font:500 13px Montserrat;color:var(--rose);font-style:normal}
 @keyframes mq{to{transform:translateX(calc(-50% - 8px))}}
+.bento{display:grid;grid-template-columns:1.2fr 1fr 1fr;grid-template-rows:230px 230px;gap:16px}.bento div{border-radius:26px;background:center/cover;transition:.6s}.bento div:hover{transform:scale(1.02)}.bento div:first-child{grid-row:span 2}
+.care{position:relative;height:520px}.care div{position:absolute;border-radius:30px;background:center/cover}.care div:first-child{inset:0 22% 12% 0}.care div:last-child{width:48%;height:55%;right:0;bottom:0;border:8px solid var(--bg)}
+.av{display:inline-block;width:34px;height:34px;border-radius:50%;background:center/cover;vertical-align:middle;margin-right:10px}
 .cta{text-align:center;background:linear-gradient(135deg,#2f2522,#4a3833);color:#fff;border-radius:40px;padding:90px 30px;position:relative;overflow:hidden}
 .cta::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(var(--rose),transparent 70%);top:-200px;left:-100px;opacity:.5;animation:drift 14s infinite}
 .cta h2{position:relative;margin-bottom:18px}.cta p{position:relative;color:#d8c4bc;margin-bottom:34px}
@@ -70,6 +73,7 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:40px 0}
 .r.in{opacity:1;transform:none}
 .d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
 @media(max-width:900px){nav{display:none}.hero,.split{grid-template-columns:1fr}.svc{grid-template-columns:1fr 1fr}.vis{max-width:420px;margin:0 auto}section{padding:80px 0}}
+@media(max-width:900px){.bento{grid-template-columns:1fr 1fr;grid-template-rows:200px 160px 160px}.bento div:first-child{grid-column:span 2;grid-row:auto}.care{height:420px}}
 @media(max-width:560px){.k{letter-spacing:.14em;font-size:12px}.svc{grid-template-columns:1fr}.rv{width:280px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;transform:none}}
 </style>
@@ -102,6 +106,12 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:40px 0}
 <div class="sv r d3"><div class="im" style="background-image:url('https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=500&h=400&q=80&auto=format&fit=crop')"></div><h3>Ботулінотерапія</h3><p>Корекція мімічних зморшок</p><b>від 120 ₴/од.</b></div>
 </div></div></section>
 
+<section style="padding-top:0"><div class="wrap">
+<p class="k r">Результати та кабінет</p><h2 class="r">Зазирніть <em>до нас</em></h2>
+<div class="bento">
+<div class="r" style="background-image:url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=900&h=1000&q=80&auto=format&fit=crop')"></div><div class="r d1" style="background-image:url('https://images.unsplash.com/photo-1552693673-1bf958298935?w=700&h=500&q=80&auto=format&fit=crop')"></div><div class="r d2" style="background-image:url('https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=700&h=500&q=80&auto=format&fit=crop')"></div><div class="r d1" style="background-image:url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=700&h=500&q=80&auto=format&fit=crop')"></div><div class="r d2" style="background-image:url('https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=700&h=500&q=80&auto=format&fit=crop')"></div>
+</div></div></section>
+
 <section id="about" style="padding-top:0"><div class="wrap split">
 <div><p class="k r">Мій підхід</p><h2 class="r" style="margin-bottom:0">Спочатку — <em>діагностика</em>, потім — процедури</h2></div>
 <ul class="list">
@@ -114,15 +124,21 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:40px 0}
 <section id="rev" style="padding-top:0"><div class="wrap">
 <p class="k r">Відгуки</p><h2 class="r">Говорять <em>клієнтки</em></h2></div>
 <div class="revs r"><div>
-<div class="rv">«Вперше за роки шкіра без висипань. Олена пояснює кожен крок — відчуваєш довіру.»<small>— Анна</small></div>
-<div class="rv">«Після біоревіталізації колеги питали, чи я з відпустки 😊»<small>— Вікторія</small></div>
-<div class="rv">«Найделікатніший ботокс у моєму житті. Обличчя живе і свіже.»<small>— Наталія</small></div>
-<div class="rv">«Підібрала догляд у два рази дешевший за мій попередній — і він працює.»<small>— Юлія</small></div>
-<div class="rv">«Вперше за роки шкіра без висипань. Олена пояснює кожен крок — відчуваєш довіру.»<small>— Анна</small></div>
-<div class="rv">«Після біоревіталізації колеги питали, чи я з відпустки 😊»<small>— Вікторія</small></div>
-<div class="rv">«Найделікатніший ботокс у моєму житті. Обличчя живе і свіже.»<small>— Наталія</small></div>
-<div class="rv">«Підібрала догляд у два рази дешевший за мій попередній — і він працює.»<small>— Юлія</small></div>
+<div class="rv">«Вперше за роки шкіра без висипань. Олена пояснює кожен крок — відчуваєш довіру.»<small><span class="av" style="background-image:url('https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=160&h=160&q=80&auto=format&fit=crop&crop=faces')"></span>Анна</small></div>
+<div class="rv">«Після біоревіталізації колеги питали, чи я з відпустки 😊»<small><span class="av" style="background-image:url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=160&h=160&q=80&auto=format&fit=crop&crop=faces')"></span>Вікторія</small></div>
+<div class="rv">«Найделікатніший ботокс у моєму житті. Обличчя живе і свіже.»<small><span class="av" style="background-image:url('https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=160&h=160&q=80&auto=format&fit=crop&crop=faces')"></span>Наталія</small></div>
+<div class="rv">«Підібрала догляд у два рази дешевший за мій попередній — і він працює.»<small><span class="av" style="background-image:url('https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=160&h=160&q=80&auto=format&fit=crop&crop=faces')"></span>Юлія</small></div>
+<div class="rv">«Вперше за роки шкіра без висипань. Олена пояснює кожен крок — відчуваєш довіру.»<small><span class="av" style="background-image:url('https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=160&h=160&q=80&auto=format&fit=crop&crop=faces')"></span>Анна</small></div>
+<div class="rv">«Після біоревіталізації колеги питали, чи я з відпустки 😊»<small><span class="av" style="background-image:url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=160&h=160&q=80&auto=format&fit=crop&crop=faces')"></span>Вікторія</small></div>
+<div class="rv">«Найделікатніший ботокс у моєму житті. Обличчя живе і свіже.»<small><span class="av" style="background-image:url('https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=160&h=160&q=80&auto=format&fit=crop&crop=faces')"></span>Наталія</small></div>
+<div class="rv">«Підібрала догляд у два рази дешевший за мій попередній — і він працює.»<small><span class="av" style="background-image:url('https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=160&h=160&q=80&auto=format&fit=crop&crop=faces')"></span>Юлія</small></div>
 </div></div></section>
+
+<section style="padding-top:0"><div class="wrap split">
+<div class="care r"><div style="background-image:url('https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=800&h=900&q=80&auto=format&fit=crop')"></div><div style="background-image:url('https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&h=700&q=80&auto=format&fit=crop')"></div></div>
+<div><p class="k r">Домашній догляд</p><h2 class="r" style="margin-bottom:24px">Результат, що <em>залишається</em></h2>
+<p class="r" style="color:var(--muted);font-size:17px">Після кожної процедури ви отримуєте персональну схему догляду вдома: які засоби, у якому порядку і як часто. Підбираю косметику під ваш бюджет — від аптечних брендів до професійних.</p></div>
+</div></section>
 
 <section id="book" style="padding-top:0"><div class="wrap"><div class="cta r">
 <h2>Консультація <em style="color:var(--peach)">−50%</em> цього місяця</h2>
