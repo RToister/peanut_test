@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HausFrei — розрахунок сайту та реклами</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#17264a;--navy2:#0f1b36;--gold:#b8975a;--gold2:#d8bd84;--bg:#f7f5f0;--text:#1d2433;--muted:#5d6577;--line:#e6e1d6;--ok:#2f7d4f}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,sans-serif}
+.wrap{max-width:960px;margin:0 auto;padding:0 18px}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;color:var(--navy)}
+.top{background:linear-gradient(160deg,var(--navy),var(--navy2));color:#fff;padding:56px 0 46px;border-bottom:5px solid var(--gold)}
+.top h1{color:#fff;font-size:clamp(30px,5vw,46px);line-height:1.1;margin:10px 0 12px}
+.top p{color:#c6cddb;max-width:640px}
+.k{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2)}
+section{padding:46px 0 0}
+h2{font-size:clamp(24px,3.6vw,32px);margin-bottom:6px}
+.sub{color:var(--muted);margin-bottom:20px}
+.tbl{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.row{display:grid;grid-template-columns:1fr auto;gap:16px;padding:16px 20px;border-bottom:1px solid var(--line);align-items:center}
+.row:last-child{border-bottom:0}
+.row b{display:block;color:var(--navy)}
+.row small{color:var(--muted);font-size:14px;display:block}
+.row .p{font-weight:700;white-space:nowrap;text-align:right;color:var(--navy)}
+.row .p small{font-weight:500}
+.row.tot{background:var(--navy);color:#fff}.row.tot b,.row.tot .p{color:var(--gold2);font-size:18px}
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:20px;margin-left:6px;vertical-align:2px}
+.us{background:#efe6d3;color:#7a5f2b}.ext{background:#e6ebf5;color:#30436e}.free{background:#e2f1e7;color:var(--ok)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pl{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px}
+.pl.hl{border:2px solid var(--gold);box-shadow:0 18px 40px rgba(184,151,90,.18);position:relative}
+.pl.hl::before{content:"Рекомендуємо";position:absolute;top:-12px;left:20px;background:var(--gold);color:var(--navy2);font-size:12px;font-weight:700;padding:3px 10px;border-radius:20px}
+.pl h3{font-size:22px;margin-bottom:4px}
+.pl .pr{font:800 28px "Playfair Display";color:var(--navy);margin:10px 0 2px}
+.pl .pr small{font:500 14px Inter;color:var(--muted)}
+.pl ul{list-style:none;margin-top:14px;font-size:15px}
+.pl li{padding:5px 0 5px 22px;position:relative}.pl li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:700}
+.fc{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.f{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;text-align:center}
+.f b{display:block;font:800 26px "Playfair Display";color:var(--navy)}
+.f span{font-size:13px;color:var(--muted)}
+.arrow{text-align:center;color:var(--gold);font-size:22px;margin:6px 0}
+.note{background:#fff8e8;border:1px solid #ecd9aa;border-radius:14px;padding:14px 18px;font-size:14px;color:#6b5626;margin-top:14px}
+.steps{counter-reset:s;display:grid;gap:10px}
+.steps div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px 14px 60px;position:relative}
+.steps div::before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:14px;width:30px;height:30px;border-radius:50%;background:var(--navy);color:var(--gold2);display:grid;place-items:center;font-weight:700}
+.steps b{color:var(--navy)}
+.need{columns:2;column-gap:26px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 26px}
+.need li{margin:0 0 8px 18px;break-inside:avoid}
+footer{padding:40px 0 60px;color:var(--muted);font-size:13px}
+@media(max-width:720px){.plans{grid-template-columns:1fr}.fc{grid-template-columns:1fr 1fr}.need{columns:1}.row{grid-template-columns:1fr}.row .p{text-align:left}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+<span class="k">Комерційна пропозиція · чернетка</span>
+<h1>HausFrei Familienservice — сайт і реклама в Google</h1>
+<p>Лендінг із заявками та дзвінками, картка в Google Maps і реклама Google Ads по Аугсбургу та околицях. Нижче наведено всі витрати: разові, щомісячні та прогноз заявок.</p>
+<p style="margin-top:14px"><a href="./" style="color:var(--gold2);font-weight:600">→ Подивитися демо сайту</a></p>
+</div></div>
+
+<div class="wrap">
+
+<section>
+<h2>1. Разові витрати на запуск</h2>
+<p class="sub">Оплачуються один раз на старті.</p>
+<div class="tbl">
+<div class="row"><div><b>Лендінг під ключ <span class="tag us">наша робота</span></b><small>Дизайн у фірмовому стилі, адаптив під телефон, кнопки «Подзвонити» та WhatsApp, форма заявки з надсиланням на e-mail або в Telegram, базове SEO під «Entrümpelung Augsburg», розмітка для Google</small></div><div class="p">450 €</div></div>
+<div class="row"><div><b>Налаштування Google Ads <span class="tag us">наша робота</span></b><small>Акаунт, підбір ключових слів, 2–3 оголошення, геотаргетинг ~40 км від Аугсбурга, відстеження дзвінків і заявок, мінус-слова</small></div><div class="p">200 €</div></div>
+<div class="row"><div><b>Профіль у Google Maps (Google Business Profile) <span class="tag us">наша робота</span></b><small>Створення та оптимізація картки: категорії, послуги, фото, опис, район обслуговування. Підтвердження від Google проходить власник</small></div><div class="p">80 €</div></div>
+<div class="row"><div><b>Домен .de <span class="tag ext">сторонній сервіс</span></b><small>Наприклад, hausfrei-augsburg.de. Ціна залежить від реєстратора</small></div><div class="p">≈ 1–15 €<small> / перший рік</small></div></div>
+<div class="row"><div><b>Impressum і Datenschutzerklärung <span class="tag free">можна безкоштовно</span></b><small>Обов'язкові для сайту в Німеччині. Безкоштовний генератор (наприклад, eRecht24) або перевірка юристом</small></div><div class="p">0–150 €</div></div>
+<div class="row"><div><b>Cookie-банер (Consent) <span class="tag free">можна безкоштовно</span></b><small>Потрібен, щоб законно відстежувати конверсії Google Ads у ЄС. Для маленького сайту вистачає безкоштовного тарифу</small></div><div class="p">0 €</div></div>
+<div class="row tot"><div><b>Разом на старт</b></div><div class="p">≈ 730–895 €</div></div>
+</div>
+</section>
+
+<section>
+<h2>2. Щомісячні витрати</h2>
+<p class="sub">Бюджет Google Ads сплачується напряму Google з картки клієнта. Ми ці гроші не отримуємо.</p>
+<div class="tbl">
+<div class="row"><div><b>Хостинг сайту <span class="tag free">можна безкоштовно</span></b><small>Сучасний статичний хостинг (Netlify / Cloudflare Pages) безкоштовний. Класичний хостинг із поштою коштує приблизно 4–6 €/міс</small></div><div class="p">0–6 €</div></div>
+<div class="row"><div><b>Пошта info@домен <span class="tag ext">сторонній сервіс</span></b><small>Простий поштовий тариф у реєстратора або Google Workspace</small></div><div class="p">≈ 1–7 €</div></div>
+<div class="row"><div><b>Бюджет Google Ads <span class="tag ext">платиться Google</span></b><small>Рекомендований старт для одного міста й ніші. Можна змінити будь-якого дня</small></div><div class="p">400–600 €</div></div>
+<div class="row"><div><b>Ведення реклами <span class="tag us">наша робота</span></b><small>Щотижнева оптимізація ставок і ключових слів, чистка нецільових запитів, A/B-тести оголошень, короткий звіт щомісяця</small></div><div class="p">150 €</div></div>
+<div class="row tot"><div><b>Разом на місяць</b></div><div class="p">≈ 550–765 €</div></div>
+</div>
+</section>
+
+<section>
+<h2>3. Прогноз: що дасть реклама</h2>
+<p class="sub">Орієнтовний розрахунок для бюджету 500 € на місяць. Точну ціну кліку покаже Google Keyword Planner у перші 1–2 тижні.</p>
+<div class="fc">
+<div class="f"><b>2–4 €</b><span>ціна кліку (оцінка)</span></div>
+<div class="f"><b>125–250</b><span>відвідувачів сайту</span></div>
+<div class="f"><b>10–25</b><span>дзвінків або заявок (8–10%)</span></div>
+<div class="f"><b>3–8</b><span>замовлень (≈30% заявок)</span></div>
+</div>
+<div class="arrow">↓</div>
+<div class="tbl"><div class="row tot"><div><b>Якщо середній чек за звільнення квартири 800–2 000 €</b><small style="color:#c6cddb">то 3–8 замовлень дають ≈ 2 400–16 000 € обороту на місяць за витрат на рекламу ≈ 650 €</small></div><div class="p">окупність з 1–2 замовлень</div></div></div>
+<p class="note">⚠️ Це орієнтир, а не гарантія. Результат залежить від конкуренції в Аугсбурзі, швидкості відповіді на дзвінки (найважливіше!), цін і відгуків у Google. Реальні цифри стануть зрозумілими за 3–4 тижні роботи реклами.</p>
+</section>
+
+<section>
+<h2>4. Варіанти старту</h2>
+<p class="sub">Можна почати з малого й додавати рекламу пізніше.</p>
+<div class="plans">
+<div class="pl"><h3>Мінімум</h3><div class="pr">≈ 530 € <small>разово</small></div><div style="color:var(--muted);font-size:14px">+ ≈ 1–10 €/міс</div><ul><li>Лендінг</li><li>Картка в Google Maps</li><li>Домен і пошта</li><li>Без платної реклами: клієнти приходять із Maps і пошуку</li></ul></div>
+<div class="pl hl"><h3>Старт</h3><div class="pr">≈ 730 € <small>разово</small></div><div style="color:var(--muted);font-size:14px">+ ≈ 400 € реклама + 150 € ведення / міс</div><ul><li>Усе з «Мінімуму»</li><li>Google Ads ~40 км навколо Аугсбурга</li><li>Відстеження дзвінків і заявок</li><li>Щомісячний звіт</li></ul></div>
+<div class="pl"><h3>Активний</h3><div class="pr">≈ 730 € <small>разово</small></div><div style="color:var(--muted);font-size:14px">+ ≈ 800 € реклама + 200 € ведення / міс</div><ul><li>Усе зі «Старту»</li><li>Окремі кампанії: Haushaltsauflösung, Kellerentrümpelung, Firmenauflösung</li><li>Більше міст навколо</li><li>Збір відгуків у Google</li></ul></div>
+</div>
+</section>
+
+<section>
+<h2>5. План запуску</h2>
+<p class="sub">Від погодження до перших заявок — приблизно тиждень.</p>
+<div class="steps">
+<div><b>День 1–2:</b> фінальний сайт з вашими контактами, текстами й фото; підключення домену та форми</div>
+<div><b>День 2–3:</b> створення картки в Google Maps (підтвердження від Google займає від кількох днів до ~2 тижнів)</div>
+<div><b>День 3–5:</b> налаштування Google Ads, перевірка, запуск</div>
+<div><b>Тиждень 2–4:</b> оптимізація: прибираємо дорогі й нецільові запити, залишаємо ті, що дають дзвінки</div>
+</div>
+</section>
+
+<section>
+<h2>6. Що потрібно від клієнта</h2>
+<p class="sub">Щоб зробити фінальну версію сайту.</p>
+<ul class="need">
+<li>Номер телефону та WhatsApp</li>
+<li>E-mail для заявок</li>
+<li>Дані для Impressum: ім'я власника, адреса, Steuernummer / USt-IdNr.</li>
+<li>Логотип (якщо є у хорошій якості)</li>
+<li>5–15 реальних фото робіт: до/після, команда, авто</li>
+<li>Орієнтовні ціни або «від …» для FAQ</li>
+<li>Бажана назва домену</li>
+<li>Google-акаунт для реклами й картки на Maps (з картою для оплати реклами)</li>
+<li>Міста, у які готові виїжджати</li>
+</ul>
+</section>
+
+</div>
+<footer><div class="wrap">Розрахунок орієнтовний. Ціни сторонніх сервісів можуть змінюватися. Бюджет Google Ads клієнт сплачує напряму Google.</div></footer>
+</body>
+</html>
