@@ -72,9 +72,11 @@ const CASES = [
     pts: ['Прайс і галерея робіт', 'Знижка −15% на перший візит', 'Заявка за 30 секунд'] },
   { site: 'tutor', niche: 'Репетитор англійської', name: 'EN з Анною', bg: '#e8ecff', fg: '#121a3d', ac: '#3b5bfd',
     pts: ['Для кого заняття та вартість', 'Відповіді на часті запитання', 'Запис на пробний урок'] },
+  { site: 'hausfrei', niche: 'Клієнт з Німеччини · Аугсбург', name: 'HausFrei', bg: '#1b2440', fg: '#fff', ac: '#d4b06a',
+    pts: ['Сайт німецькою, готовий до інших мов', 'Дзвінок і WhatsApp в один дотик', 'Онлайн-калькулятор вартості'] },
 ];
 
-function caseSlide(c) {
+function caseSlide(c, swipe = false) {
   return page(1080, 1350, `
   <div class="f" style="background:${c.bg};color:${c.fg}">
     <span class="tag" style="color:${c.ac}"><i style="background:${c.ac}"></i>Кейс · ${c.niche}</span>
@@ -84,7 +86,7 @@ function caseSlide(c) {
     </ul>
     ${laptop(shot(c.site, 'laptop'), '--lw:820px;left:430px;top:600px')}
     ${phone(shot(c.site, 'phone'), '--pw:330px;left:300px;top:520px')}
-    <div class="foot" style="opacity:.7"><span class="logo"><b>R</b>Сайти&nbsp;+&nbsp;боти</span><span>свайп → наступна робота</span></div>
+    <div class="foot" style="opacity:.7"><span class="logo"><b>R</b>Сайти&nbsp;+&nbsp;боти</span><span>${swipe ? 'свайп → наступна робота' : HANDLE}</span></div>
   </div>`);
 }
 
@@ -178,7 +180,7 @@ const carousel = [
 const more = page(1080, 1350, `
 <div class="f dark">
   <span class="tag" style="color:#fff"><i></i>Портфоліо</span>
-  <h2 style="margin-top:34px">7 сайтів —<br>7 різних <span class="hl">характерів</span></h2>
+  <h2 style="margin-top:34px">8 сайтів —<br>8 різних <span class="hl">характерів</span></h2>
   <p class="lead" style="margin-top:24px;max-width:760px">Жодного шаблону: дизайн під нішу, клієнта і настрій бренду</p>
   ${['barber', 'nails', 'coach', 'cosmetologist', 'tutor'].map((s, i) =>
     phone(shot(s, 'phone'), `--pw:250px;left:${-20 + i * 225}px;top:${760 + (i % 2) * 70}px;transform:rotate(${(i - 2) * 3}deg)`)).join('')}
@@ -227,7 +229,8 @@ const JOBS = [
   ['07-process', process, 1080, 1350],
   ...CASES.slice(3, 4).map(c => [`08-case-${c.site}`, caseSlide(c), 1080, 1350]),
   ['09-portfolio-1-collage', more, 1080, 1350],
-  ...CASES.slice(4).map((c, i) => [`09-portfolio-${i + 2}-${c.site}`, caseSlide(c), 1080, 1350]),
+  ...CASES.slice(4, 7).map((c, i) => [`09-portfolio-${i + 2}-${c.site}`, caseSlide(c, i < 2), 1080, 1350]),
+  ...CASES.slice(7).map(c => [`10-case-${c.site}`, caseSlide(c), 1080, 1350]),
   ['profile-avatar', avatar, 1080, 1080],
   ...Object.entries(ICONS).map(([n, s], i) => [`highlight-${i + 1}-${n}`, highlight(s), 1080, 1920]),
   ['story-template', story, 1080, 1920],

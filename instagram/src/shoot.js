@@ -5,7 +5,7 @@ const http = require('http'), fs = require('fs'), path = require('path');
 
 const ROOT = path.resolve(__dirname, '../..');
 const OUT = path.resolve(__dirname, '../shots');
-const SITES = ['barber', 'nails', 'psychologist', 'coach', 'fitness', 'cosmetologist', 'tutor'];
+const SITES = ['barber', 'nails', 'psychologist', 'coach', 'fitness', 'cosmetologist', 'tutor', 'hausfrei'];
 const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript',
   '.svg': 'image/svg+xml', '.webp': 'image/webp', '.png': 'image/png', '.jpg': 'image/jpeg', '.woff2': 'font/woff2' };
 
