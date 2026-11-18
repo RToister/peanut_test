@@ -1,0 +1,47 @@
+{
+  "_hinweis": "Alle Werte in [ECKIGEN KLAMMERN] vor dem Livegang ersetzen. Danach: python3 build.py",
+
+  "company": "HausFrei Familienservice",
+  "brand": "HausFrei",
+  "brand_sub": "Familienservice",
+
+  "domain": "https://www.hausfrei-augsburg.de",
+  "indexable": false,
+
+  "languages": ["de"],
+  "default_language": "de",
+
+  "phones": [
+    { "label": "Büro",  "display": "+49 821 XXX XX XX",   "tel": "+49821" },
+    { "label": "Mobil", "display": "+49 1XX XXX XX XX",   "tel": "+491" }
+  ],
+  "whatsapp": "491",
+  "email": "info@hausfrei-augsburg.de",
+
+  "address": {
+    "street": "[Straße Hausnummer]",
+    "zip": "[PLZ]",
+    "city": "Augsburg",
+    "country": "DE"
+  },
+  "opening_hours_text": "Mo–Sa 8:00–20:00",
+  "opening_hours_schema": "Mo-Sa 08:00-20:00",
+
+  "legal": {
+    "owner": "[Vor- und Nachname der Inhaberin / des Inhabers]",
+    "legal_form": "[Rechtsform, z. B. Einzelunternehmen]",
+    "vat_id": "",
+    "tax_number": "",
+    "register": "",
+    "responsible_content": "[Vor- und Nachname, Anschrift wie oben]",
+    "hoster_name": "[Hosting-Anbieter, z. B. IONOS SE]",
+    "hoster_address": "[Anschrift des Hosting-Anbieters]",
+    "last_update": "November 2026"
+  },
+
+  "form": {
+    "to": "info@hausfrei-augsburg.de",
+    "from": "website@hausfrei-augsburg.de",
+    "subject": "Neue Anfrage über die Website"
+  }
+}

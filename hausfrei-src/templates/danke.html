@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}{{ t.thanks.title }} | {{ c.company }}{% endblock %}
+{% block bodyclass %}legal-page{% endblock %}
+{% block main %}
+<section class="sec legal thanks">
+ <div class="wrap narrow">
+  <div class="thanks-ic" aria-hidden="true">✓</div>
+  <h1>{{ t.thanks.title }}</h1>
+  <p>{{ t.thanks.text }}</p>
+  <div class="phones">{% for p in c.phones %}<a class="phone light" href="tel:{{ p.tel }}"><span class="ph-ic" aria-hidden="true">📞</span><span><small>{{ p.label }}</small><b>{{ p.display }}</b></span></a>{% endfor %}</div>
+  <p class="back"><a class="btn btn-navy" href="{{ home }}">← {{ t.footer.back }}</a></p>
+ </div>
+</section>
+{% endblock %}

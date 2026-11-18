@@ -1,0 +1,111 @@
+{
+  "lang_name": "Deutsch",
+  "meta": {
+    "title": "Entrümpelung & Haushaltsauflösung Augsburg | HausFrei Familienservice",
+    "description": "Entrümpelung und Haushaltsauflösung in Augsburg und Umgebung: Haus, Wohnung, Keller, Dachboden, Büro. Schnell, sauber, Entsorgung inklusive. Kostenlose Besichtigung & Festpreis."
+  },
+  "a11y": { "skip": "Zum Inhalt springen", "menu": "Hauptnavigation", "language": "Sprache wählen", "close": "Schließen" },
+  "nav": { "services": "Leistungen", "process": "Ablauf", "area": "Einsatzgebiet", "faq": "FAQ", "contact": "Kontakt" },
+  "cta": {
+    "quote": "Kostenloses Angebot",
+    "visit": "Kostenlose Besichtigung anfragen",
+    "call": "Anrufen",
+    "call_now": "Jetzt anrufen",
+    "whatsapp": "WhatsApp",
+    "whatsapp_long": "WhatsApp – Fotos senden",
+    "write": "Jetzt schreiben",
+    "email": "E-Mail",
+    "choose_number": "Welche Nummer möchten Sie anrufen?"
+  },
+  "hero": {
+    "location": "Augsburg & Umgebung",
+    "title_1": "Entrümpelung & Haushalts­auflösung",
+    "title_2": "ohne Stress",
+    "lead": "Wir räumen Haus, Wohnung, Keller, Dachboden oder Büro – schnell, sauber und zum fairen Festpreis. Entsorgung inklusive.",
+    "checks": ["Schnell vor Ort", "Sauber & zuverlässig", "Entsorgung inklusive", "Faire Preise"],
+    "phones_title": "Rufen Sie uns direkt an:",
+    "badge1_value": "24–48 h", "badge1_text": "Termine kurzfristig",
+    "badge2_value": "0 €", "badge2_text": "Besichtigung",
+    "mascot_alt": "HausFrei Mitarbeiter mit Umzugskarton"
+  },
+  "strip": ["Haus", "Wohnung", "Keller", "Dachboden", "Büro", "Firma", "Garage", "Nachlass"],
+  "services": {
+    "kicker": "Leistungen",
+    "title": "Wir räumen alles – Sie müssen nichts tun",
+    "items": [
+      { "img": "haus", "icon": "🏠", "title": "Haus", "text": "Komplette Hausräumung inkl. Möbel, Küche, Garten und Garage.", "alt": "Einfamilienhaus" },
+      { "img": "wohnung", "icon": "🏢", "title": "Wohnung", "text": "Wohnungsauflösung – auch bei Umzug ins Pflegeheim oder im Erbfall.", "alt": "Mehrfamilienhaus" },
+      { "img": "keller", "icon": "📦", "title": "Keller & Dachboden", "text": "Wir schaffen Platz – schnell und ohne Schmutz im Treppenhaus.", "alt": "Aufgeräumter Raum" },
+      { "img": "buero", "icon": "💼", "title": "Büro & Firma", "text": "Büroauflösung, Aktenvernichtung und Entsorgung von Inventar.", "alt": "Büroräume" },
+      { "img": "besenrein", "icon": "✨", "title": "Besenrein übergeben", "text": "Auf Wunsch Endreinigung – bereit für Übergabe oder Verkauf.", "alt": "Reinigung eines Fensters" },
+      { "img": "transport", "icon": "🚚", "title": "Transport & Entsorgung", "text": "Fachgerechte Entsorgung und Recycling – alles aus einer Hand.", "alt": "Leeres, sauberes Wohnzimmer" }
+    ]
+  },
+  "why": {
+    "kicker": "Warum HausFrei",
+    "title": "Ein Familienbetrieb, dem Sie Ihr Zuhause anvertrauen können",
+    "items": [
+      { "title": "Schnell vor Ort", "text": "Besichtigung meist innerhalb von 24–48 Stunden." },
+      { "title": "Sauber & zuverlässig", "text": "Pünktlich, diskret und besenrein übergeben." },
+      { "title": "Entsorgung inklusive", "text": "Keine versteckten Kosten für Container oder Deponie." },
+      { "title": "Faire Preise", "text": "Verbindlicher Festpreis, Wertanrechnung möglich." },
+      { "title": "Kurzfristig", "text": "Auch Eiltermine und Wochenenden nach Absprache." }
+    ]
+  },
+  "process": {
+    "kicker": "So einfach geht's",
+    "title": "In 4 Schritten zur leeren Wohnung",
+    "items": [
+      { "title": "Anfrage", "text": "Rufen Sie an oder schicken Sie uns Fotos per WhatsApp." },
+      { "title": "Besichtigung", "text": "Kostenlos und unverbindlich bei Ihnen vor Ort." },
+      { "title": "Festpreis", "text": "Sie erhalten ein transparentes Angebot – ohne Überraschungen." },
+      { "title": "Räumung", "text": "Wir räumen, entsorgen und übergeben besenrein." }
+    ]
+  },
+  "result": {
+    "kicker": "Ergebnis",
+    "title": "Übergabefertig – sauber und leer",
+    "items": [
+      { "img": "kueche", "label": "Küche · besenrein", "alt": "Leere, saubere Küche" },
+      { "img": "schlafzimmer", "label": "Schlafzimmer · besenrein", "alt": "Sauberes Schlafzimmer" }
+    ]
+  },
+  "area": {
+    "kicker": "Einsatzgebiet",
+    "title": "Augsburg und Umgebung",
+    "radius": "Umkreis ca. 40 km",
+    "cities": ["Augsburg", "Friedberg", "Königsbrunn", "Neusäß", "Stadtbergen", "Gersthofen", "Bobingen", "Aichach", "Schwabmünchen", "Diedorf"]
+  },
+  "faq": {
+    "kicker": "FAQ",
+    "title": "Häufige Fragen",
+    "items": [
+      { "q": "Was kostet eine Entrümpelung?", "a": "Der Preis hängt von Menge, Etage und Zugang ab. Nach der kostenlosen Besichtigung erhalten Sie einen verbindlichen Festpreis." },
+      { "q": "Werden verwertbare Gegenstände angerechnet?", "a": "Ja. Gut erhaltene Möbel oder Wertgegenstände rechnen wir auf den Preis an – das senkt Ihre Kosten." },
+      { "q": "Wie schnell können Sie kommen?", "a": "In der Regel besichtigen wir innerhalb von 24–48 Stunden. Kurzfristige Räumungen sind nach Absprache möglich." },
+      { "q": "Muss ich bei der Räumung anwesend sein?", "a": "Nicht unbedingt. Nach Schlüsselübergabe erledigen wir alles und übergeben die Räume besenrein." }
+    ]
+  },
+  "contact": {
+    "title": "Kostenloses Angebot anfordern",
+    "text": "Schreiben Sie uns kurz, was geräumt werden soll – wir melden uns noch am selben Tag. Am schnellsten geht's per Telefon oder WhatsApp mit ein paar Fotos.",
+    "hours": "Erreichbar",
+    "form": {
+      "name": "Ihr Name",
+      "phone": "Telefon",
+      "email": "E-Mail (optional)",
+      "zip": "PLZ / Ort",
+      "type_label": "Objektart",
+      "types": ["Haus", "Wohnung", "Keller / Dachboden", "Büro / Firma", "Sonstiges"],
+      "message": "Was soll geräumt werden? (Zimmer, Etage, Wunschtermin …)",
+      "submit": "Kostenloses Angebot anfordern",
+      "sending": "Wird gesendet …",
+      "privacy": "Ihre Angaben verwenden wir ausschließlich zur Bearbeitung Ihrer Anfrage. Mehr dazu in der",
+      "privacy_link": "Datenschutzerklärung",
+      "ok": "Vielen Dank! Wir melden uns schnellstmöglich bei Ihnen.",
+      "error": "Die Nachricht konnte leider nicht gesendet werden. Bitte rufen Sie uns direkt an:"
+    }
+  },
+  "footer": { "rights": "Alle Rechte vorbehalten", "imprint": "Impressum", "privacy": "Datenschutz", "back": "Zur Startseite" },
+  "thanks": { "title": "Vielen Dank für Ihre Anfrage!", "text": "Wir melden uns schnellstmöglich bei Ihnen – meist noch am selben Tag." }
+}

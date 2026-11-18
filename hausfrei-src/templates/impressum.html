@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Impressum | {{ c.company }}{% endblock %}
+{% block description %}Impressum von {{ c.company }}, {{ c.address.city }}.{% endblock %}
+{% block bodyclass %}legal-page{% endblock %}
+{% block main %}
+<section class="sec legal">
+ <div class="wrap narrow">
+  <h1>Impressum</h1>
+
+  <h2>Angaben gemäß § 5 DDG</h2>
+  <p>{{ c.company }}<br>
+  Inhaber/in: {{ c.legal.owner }}<br>
+  {{ c.address.street }}<br>
+  {{ c.address.zip }} {{ c.address.city }}<br>
+  Deutschland</p>
+  <p>Rechtsform: {{ c.legal.legal_form }}</p>
+  {% if c.legal.register %}<p>{{ c.legal.register }}</p>{% endif %}
+
+  <h2>Kontakt</h2>
+  <p>{% for p in c.phones %}Telefon ({{ p.label }}): <a href="tel:{{ p.tel }}">{{ p.display }}</a><br>{% endfor %}
+  E-Mail: <a href="mailto:{{ c.email }}">{{ c.email }}</a></p>
+
+  {% if c.legal.vat_id %}<h2>Umsatzsteuer-ID</h2>
+  <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>{{ c.legal.vat_id }}</p>{% endif %}
+  {% if c.legal.tax_number and not c.legal.vat_id %}<h2>Steuernummer</h2><p>{{ c.legal.tax_number }}</p>{% endif %}
+
+  <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+  <p>{{ c.legal.responsible_content }}</p>
+
+  <h2>Verbraucherstreitbeilegung</h2>
+  <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+  <h2>Haftung für Inhalte</h2>
+  <p>Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.</p>
+
+  <h2>Haftung für Links</h2>
+  <p>Unser Angebot enthält Links zu externen Websites Dritter (z. B. WhatsApp), auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+
+  <h2>Urheberrecht und Bildnachweise</h2>
+  <p>Die Inhalte und Werke auf dieser Website unterliegen dem deutschen Urheberrecht. Fotos: Unsplash (Unsplash-Lizenz) bzw. eigene Aufnahmen. Illustration: {{ c.company }}.</p>
+
+  <p class="back"><a class="btn btn-navy" href="{{ home }}">← {{ t.footer.back }}</a></p>
+ </div>
+</section>
+{% endblock %}

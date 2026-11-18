@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{% block title %}{{ t.meta.title }}{% endblock %}</title>
+<meta name="description" content="{% block description %}{{ t.meta.description }}{% endblock %}">
+<meta name="robots" content="{{ 'index,follow' if c.indexable and indexable_page else 'noindex,nofollow' }}">
+<meta name="theme-color" content="#0f1b36">
+<meta name="format-detection" content="telephone=yes">
+<link rel="canonical" href="{{ canonical }}">
+{% if langs|length > 1 and indexable_page %}{% for l in langs %}<link rel="alternate" hreflang="{{ l.code }}" href="{{ l.abs }}">
+{% endfor %}<link rel="alternate" hreflang="x-default" href="{{ langs[0].abs }}">{% endif %}
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ t.meta.title }}">
+<meta property="og:description" content="{{ t.meta.description }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:image" content="{{ c.domain }}/assets/img/haus-1200.webp">
+<meta property="og:locale" content="{{ {'de':'de_DE','en':'en_GB','tr':'tr_TR','uk':'uk_UA'}.get(lang,'de_DE') }}">
+<link rel="icon" href="{{ root }}assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="{{ root }}assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ root }}assets/fonts/playfair-display-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ root }}assets/style.css?v={{ version }}">
+{% block head %}{% endblock %}
+</head>
+<body class="{% block bodyclass %}{% endblock %}">
+<a class="skip" href="#main">{{ t.a11y.skip }}</a>
+
+<header class="hdr" id="top">
+ <div class="wrap hdr-in">
+  <a class="logo" href="{{ home }}" aria-label="{{ c.company }}">
+   <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#d8bd84" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 9.5V21h14V9.5"/><rect x="10" y="13" width="4" height="4"/></svg>
+   <span><b>{{ c.brand }}</b><small>{{ c.brand_sub }}</small></span>
+  </a>
+  {% block nav %}
+  <nav class="nav" aria-label="{{ t.a11y.menu }}">
+   <a href="{{ home }}#leistungen">{{ t.nav.services }}</a><a href="{{ home }}#ablauf">{{ t.nav.process }}</a><a href="{{ home }}#gebiet">{{ t.nav.area }}</a><a href="{{ home }}#faq">{{ t.nav.faq }}</a>
+  </nav>
+  {% endblock %}
+  <div class="hdr-right">
+   <div class="hdr-phones">
+    {% for p in c.phones %}<a class="hdr-phone{{ ' second' if not loop.first }}" href="tel:{{ p.tel }}"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span><small>{{ p.label }}</small>{{ p.display }}</span></a>{% endfor %}
+   </div>
+   {% if langs|length > 1 %}
+   <details class="lang">
+    <summary aria-label="{{ t.a11y.language }}">{{ lang|upper }}</summary>
+    <ul>{% for l in langs %}<li><a href="{{ l.rel }}" hreflang="{{ l.code }}" lang="{{ l.code }}"{% if l.code == lang %} aria-current="true"{% endif %}><b>{{ l.code|upper }}</b> {{ l.name }}</a></li>{% endfor %}</ul>
+   </details>
+   {% endif %}
+   <a class="btn btn-gold sm hdr-cta" href="{{ home }}#kontakt">{{ t.cta.quote }}</a>
+  </div>
+ </div>
+</header>
+
+<main id="main">
+{% block main %}{% endblock %}
+</main>
+
+<footer class="ftr">
+ <div class="wrap ftr-in">
+  <div>
+   <b class="ftr-brand">{{ c.company }}</b>
+   <p>{{ c.address.street }}, {{ c.address.zip }} {{ c.address.city }}</p>
+   <p>{{ t.contact.hours }}: {{ c.opening_hours_text }}</p>
+  </div>
+  <div class="ftr-phones">
+   {% for p in c.phones %}<a href="tel:{{ p.tel }}">{{ p.label }}: <b>{{ p.display }}</b></a>{% endfor %}
+   <a href="mailto:{{ c.email }}">{{ c.email }}</a>
+  </div>
+  <div class="ftr-links">
+   <a href="{{ root }}impressum.html">{{ t.footer.imprint }}</a>
+   <a href="{{ root }}datenschutz.html">{{ t.footer.privacy }}</a>
+   <span>© {{ year }} {{ c.company }}</span>
+  </div>
+ </div>
+</footer>
+
+<!-- Mobile Kontaktleiste: funktioniert auch ohne JavaScript (#anrufen öffnet das Nummern-Menü) -->
+<div class="bar" role="navigation" aria-label="{{ t.cta.call }}">
+ <a class="btn btn-gold" href="#anrufen">📞 {{ t.cta.call }}</a>
+ <a class="btn btn-wa" href="https://wa.me/{{ c.whatsapp }}" rel="noopener" target="_blank">💬 {{ t.cta.whatsapp }}</a>
+</div>
+<div class="sheet" id="anrufen" role="dialog" aria-modal="true" aria-labelledby="sheet-t">
+ <a class="sheet-bg" href="#" aria-label="{{ t.a11y.close }}"></a>
+ <div class="sheet-box">
+  <p id="sheet-t">{{ t.cta.choose_number }}</p>
+  {% for p in c.phones %}<a class="sheet-num" href="tel:{{ p.tel }}"><small>{{ p.label }}</small><b>{{ p.display }}</b><span>📞</span></a>{% endfor %}
+  <a class="sheet-close" href="#">{{ t.a11y.close }}</a>
+ </div>
+</div>
+
+<script src="{{ root }}assets/main.js?v={{ version }}" defer></script>
+</body>
+</html>
