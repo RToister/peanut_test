@@ -22,7 +22,8 @@
 
   {% if c.legal.vat_id %}<h2>Umsatzsteuer-ID</h2>
   <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>{{ c.legal.vat_id }}</p>{% endif %}
-  {% if c.legal.tax_number and not c.legal.vat_id %}<h2>Steuernummer</h2><p>{{ c.legal.tax_number }}</p>{% endif %}
+  {% if c.legal.wirtschafts_id %}<h2>Wirtschafts-Identifikationsnummer</h2>
+  <p>Wirtschafts-Identifikationsnummer gemäß § 139c Abgabenordnung:<br>{{ c.legal.wirtschafts_id }}</p>{% endif %}
 
   <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
   <p>{{ c.legal.responsible_content }}</p>
