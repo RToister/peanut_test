@@ -192,6 +192,29 @@ const avatar = page(1080, 1080, `
   <div style="font-size:560px;font-weight:800;color:#fff;letter-spacing:-.06em;line-height:1;margin-top:-40px">R<span style="color:${BRAND.accent2}">.</span></div>
 </div>`);
 
+// ---------- варіанти аватара ----------
+const av = (bg, inner) => page(1080, 1080, `<div style="width:1080px;height:1080px;background:${bg};display:grid;place-items:center;position:relative;overflow:hidden">${inner}</div>`);
+const AVATARS = [
+  // 2: темний, біла R і лаймова крапка
+  av(BRAND.ink, `<div style="font-size:560px;font-weight:800;color:#fff;letter-spacing:-.06em;line-height:1;margin-top:-40px">R<span style="color:${BRAND.accent2}">.</span></div>`),
+  // 3: лаймовий, темна R
+  av(BRAND.accent2, `<div style="font-size:600px;font-weight:800;color:${BRAND.ink};letter-spacing:-.06em;line-height:1;margin-top:-50px">R</div>`),
+  // 4: код-стиль </R>
+  av(BRAND.ink, `<div style="font-size:300px;font-weight:800;letter-spacing:-.05em;line-height:1;color:#fff;margin-top:-20px"><span style="color:${BRAND.accent}">&lt;</span>R<span style="color:${BRAND.accent}">/&gt;</span></div>`),
+  // 5: вікно браузера з R
+  av(BRAND.accent, `<div style="width:640px;height:520px;border-radius:56px;background:#fff;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.25)">
+     <div style="height:110px;background:${BRAND.ink};display:flex;align-items:center;gap:22px;padding-left:50px">
+       <i style="width:30px;height:30px;border-radius:50%;background:#ff5f57"></i><i style="width:30px;height:30px;border-radius:50%;background:#febc2e"></i><i style="width:30px;height:30px;border-radius:50%;background:${BRAND.accent2}"></i></div>
+     <div style="height:410px;display:grid;place-items:center;font-size:270px;font-weight:800;color:${BRAND.ink};letter-spacing:-.06em;line-height:1"><div>R<span style="color:${BRAND.accent}">.</span></div></div></div>`),
+  // 6: градієнт фіолетовий → лайм
+  av(`linear-gradient(135deg, #8a7dff 0%, ${BRAND.accent} 45%, #2e21b8 100%)`, `<div style="font-size:560px;font-weight:800;color:#fff;letter-spacing:-.06em;line-height:1;margin-top:-40px;text-shadow:0 24px 60px rgba(20,10,90,.35)">R<span style="color:${BRAND.accent2}">.</span></div>`),
+  // 7: монограма RT з кільцем
+  av(BRAND.paper, `<div style="width:820px;height:820px;border-radius:50%;border:34px solid ${BRAND.accent};display:grid;place-items:center">
+     <div style="font-size:340px;font-weight:800;letter-spacing:-.07em;line-height:1;color:${BRAND.ink};margin-top:-30px">R<span style="color:${BRAND.accent}">T</span></div></div>`),
+  // 8: курсор + R (як «клік по сайту»)
+  av(BRAND.ink, `<div style="position:relative;font-size:560px;font-weight:800;color:${BRAND.accent};letter-spacing:-.06em;line-height:1;margin-top:-40px;margin-left:-120px">R<svg style="position:absolute;right:-230px;bottom:-120px" width="260" height="260" viewBox="0 0 24 24"><path d="M4 2l16 9-7 2-3 7z" fill="${BRAND.accent2}" stroke="${BRAND.ink}" stroke-width="1.2" stroke-linejoin="round"/></svg></div>`),
+];
+
 // ---------- обкладинки Highlights ----------
 const ICONS = {
   'Роботи': '<rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>',
@@ -232,6 +255,7 @@ const JOBS = [
   ...CASES.slice(4, 7).map((c, i) => [`09-portfolio-${i + 2}-${c.site}`, caseSlide(c, i < 2), 1080, 1350]),
   ...CASES.slice(7).map(c => [`10-case-${c.site}`, caseSlide(c), 1080, 1350]),
   ['profile-avatar', avatar, 1080, 1080],
+  ...AVATARS.map((h, i) => [`profile-avatar-${i + 2}`, h, 1080, 1080]),
   ...Object.entries(ICONS).map(([n, s], i) => [`highlight-${i + 1}-${n}`, highlight(s), 1080, 1920]),
   ['story-template', story, 1080, 1920],
 ];
