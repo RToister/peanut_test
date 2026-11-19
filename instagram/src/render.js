@@ -11,7 +11,8 @@ const BUILD = path.join(DIR, '.build');
 const shot = (site, kind) => `file://${DIR}/shots/${site}-${kind}.jpg`;
 
 const BRAND = { ink: '#111014', paper: '#f4f2ee', accent: '#5b4bff', accent2: '#c6ff4a', muted: '#6b6a70' };
-const HANDLE = 't.me/ruslan_toister';
+const HANDLE = '@r.toister.sites';
+const TAGLINE = 'Сайти · Telegram-боти';
 
 // ---------- базові стилі ----------
 const CSS = `
@@ -34,7 +35,8 @@ h2{font-size:76px;line-height:1.02;font-weight:800;letter-spacing:-.04em}
 .foot{position:absolute;left:84px;right:84px;bottom:64px;display:flex;justify-content:space-between;
   align-items:center;font-size:24px;font-weight:600;opacity:.6;letter-spacing:.01em}
 .logo{display:inline-flex;align-items:center;gap:14px;font-weight:800;font-size:28px;letter-spacing:-.02em}
-.logo b{width:44px;height:44px;border-radius:12px;background:${BRAND.accent};color:#fff;display:grid;place-items:center;font-size:24px}
+.logo b{height:44px;padding:0 12px;border-radius:12px;background:${BRAND.ink};color:#fff;display:inline-flex;align-items:center;font-size:22px;letter-spacing:-.02em;box-shadow:inset 0 0 0 2px rgba(255,255,255,.18)}
+.logo b s{text-decoration:none;color:#7d70ff}
 .phone{position:absolute;width:var(--pw);aspect-ratio:390/844;border-radius:calc(var(--pw)*.15);padding:calc(var(--pw)*.035);
   background:#0b0b0d;box-shadow:0 40px 90px rgba(0,0,0,.35),inset 0 0 0 2px #2a2a2e}
 .phone img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:calc(var(--pw)*.12);display:block}
@@ -45,14 +47,14 @@ h2{font-size:76px;line-height:1.02;font-weight:800;letter-spacing:-.04em}
 .laptop img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;display:block;border-radius:8px}
 .laptop .base{height:26px;background:linear-gradient(#d9d9de,#a9a9b0);border-radius:0 0 26px 26px;margin:0 -5%;}
 .num{font-size:28px;font-weight:700;opacity:.5}
-.violet .logo b{background:${BRAND.accent2};color:${BRAND.ink}}
+.violet .logo b s{color:${BRAND.accent2}}
 `;
 
 const page = (w, h, body, extra = '') =>
   `<!doctype html><html lang="uk"><head><meta charset="utf-8"><style>:root{--w:${w}px;--h:${h}px}${CSS}${extra}</style></head><body>${body}</body></html>`;
 
-const logo = (dark) => `<span class="logo"><b>R</b>Сайти&nbsp;+&nbsp;боти</span>`;
-const foot = (right = HANDLE) => `<div class="foot">${logo()}<span>${right}</span></div>`;
+const logo = () => `<span class="logo"><b><s>&lt;</s>R<s>/&gt;</s></b>${HANDLE.slice(1)}</span>`;
+const foot = (right = TAGLINE) => `<div class="foot">${logo()}<span>${right}</span></div>`;
 const phone = (src, css) => `<div class="phone" style="${css}"><img src="${src}"></div>`;
 const laptop = (src, css) => `<div class="laptop" style="${css}"><div class="scr"><img src="${src}"></div><div class="base"></div></div>`;
 
@@ -86,7 +88,7 @@ function caseSlide(c, swipe = false) {
     </ul>
     ${laptop(shot(c.site, 'laptop'), '--lw:820px;left:430px;top:600px')}
     ${phone(shot(c.site, 'phone'), '--pw:330px;left:300px;top:520px')}
-    <div class="foot" style="opacity:.7"><span class="logo"><b>R</b>Сайти&nbsp;+&nbsp;боти</span><span>${swipe ? 'свайп → наступна робота' : HANDLE}</span></div>
+    <div class="foot" style="opacity:.7">${logo()}<span>${swipe ? 'свайп → наступна робота' : TAGLINE}</span></div>
   </div>`);
 }
 
@@ -195,6 +197,7 @@ const browser = (w, h, body, top = I, fill = '#fff') => `<div style="width:${w}p
   <div style="flex:1;position:relative">${body}</div></div>`;
 const cursor = (size, css) => `<svg style="position:absolute;${css}" width="${size}" height="${size}" viewBox="0 0 24 24"><path d="M4 2l16 9-7 2-3 7z" fill="${L2}" stroke="${I}" stroke-width="1.3" stroke-linejoin="round"/></svg>`;
 const plane = (size, color) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24"><path d="M21.5 3.2 2.8 10.4c-1 .4-1 1.8 0 2.1l4.6 1.5 1.8 5.6c.3.9 1.4 1.1 2 .4l2.6-2.7 4.6 3.4c.8.6 1.9.1 2.1-.9l3-15c.2-1.1-.8-2-1.9-1.6ZM9.6 14.3l8-6.6-6.3 7.8-.4 3.2-1.3-4.4Z" fill="${color}"/></svg>`;
+const mainAvatar = av(BRAND.ink, `<div style="font-size:300px;font-weight:800;letter-spacing:-.05em;line-height:1;color:#fff;margin-top:-20px"><span style="color:${BRAND.accent}">&lt;</span>R<span style="color:${BRAND.accent}">/&gt;</span></div>`);
 const AVATARS = [
   // 1: вікно браузера з макетом лендінгу і курсором
   av(A, `<div style="position:relative">${browser(640, 520, `
@@ -285,6 +288,7 @@ const JOBS = [
   ['09-portfolio-1-collage', more, 1080, 1350],
   ...CASES.slice(4, 7).map((c, i) => [`09-portfolio-${i + 2}-${c.site}`, caseSlide(c, i < 2), 1080, 1350]),
   ...CASES.slice(7).map(c => [`10-case-${c.site}`, caseSlide(c), 1080, 1350]),
+  ['profile-avatar', mainAvatar, 1080, 1080],
   ...AVATARS.map((h, i) => [`profile-avatar-${i + 1}`, h, 1080, 1080]),
   ...Object.entries(ICONS).map(([n, s], i) => [`highlight-${i + 1}-${n}`, highlight(s), 1080, 1920]),
   ['story-template', story, 1080, 1920],
