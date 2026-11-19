@@ -186,33 +186,48 @@ const more = page(1080, 1350, `
     phone(shot(s, 'phone'), `--pw:250px;left:${-20 + i * 225}px;top:${760 + (i % 2) * 70}px;transform:rotate(${(i - 2) * 3}deg)`)).join('')}
 </div>`);
 
-// ---------- аватар ----------
-const avatar = page(1080, 1080, `
-<div style="width:1080px;height:1080px;background:${BRAND.accent};display:grid;place-items:center;position:relative">
-  <div style="font-size:560px;font-weight:800;color:#fff;letter-spacing:-.06em;line-height:1;margin-top:-40px">R<span style="color:${BRAND.accent2}">.</span></div>
-</div>`);
-
-// ---------- варіанти аватара ----------
+// ---------- аватари (без літер, тільки іконки) ----------
 const av = (bg, inner) => page(1080, 1080, `<div style="width:1080px;height:1080px;background:${bg};display:grid;place-items:center;position:relative;overflow:hidden">${inner}</div>`);
+const I = BRAND.ink, A = BRAND.accent, L2 = BRAND.accent2;
+const browser = (w, h, body, top = I, fill = '#fff') => `<div style="width:${w}px;height:${h}px;border-radius:${w * .09}px;background:${fill};overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.25);display:flex;flex-direction:column">
+  <div style="height:${h * .2}px;background:${top};display:flex;align-items:center;gap:${w * .035}px;padding-left:${w * .08}px">
+  <i style="width:${w * .045}px;height:${w * .045}px;border-radius:50%;background:#ff5f57"></i><i style="width:${w * .045}px;height:${w * .045}px;border-radius:50%;background:#febc2e"></i><i style="width:${w * .045}px;height:${w * .045}px;border-radius:50%;background:${L2}"></i></div>
+  <div style="flex:1;position:relative">${body}</div></div>`;
+const cursor = (size, css) => `<svg style="position:absolute;${css}" width="${size}" height="${size}" viewBox="0 0 24 24"><path d="M4 2l16 9-7 2-3 7z" fill="${L2}" stroke="${I}" stroke-width="1.3" stroke-linejoin="round"/></svg>`;
+const plane = (size, color) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24"><path d="M21.5 3.2 2.8 10.4c-1 .4-1 1.8 0 2.1l4.6 1.5 1.8 5.6c.3.9 1.4 1.1 2 .4l2.6-2.7 4.6 3.4c.8.6 1.9.1 2.1-.9l3-15c.2-1.1-.8-2-1.9-1.6ZM9.6 14.3l8-6.6-6.3 7.8-.4 3.2-1.3-4.4Z" fill="${color}"/></svg>`;
 const AVATARS = [
-  // 2: темний, біла R і лаймова крапка
-  av(BRAND.ink, `<div style="font-size:560px;font-weight:800;color:#fff;letter-spacing:-.06em;line-height:1;margin-top:-40px">R<span style="color:${BRAND.accent2}">.</span></div>`),
-  // 3: лаймовий, темна R
-  av(BRAND.accent2, `<div style="font-size:600px;font-weight:800;color:${BRAND.ink};letter-spacing:-.06em;line-height:1;margin-top:-50px">R</div>`),
-  // 4: код-стиль </R>
-  av(BRAND.ink, `<div style="font-size:300px;font-weight:800;letter-spacing:-.05em;line-height:1;color:#fff;margin-top:-20px"><span style="color:${BRAND.accent}">&lt;</span>R<span style="color:${BRAND.accent}">/&gt;</span></div>`),
-  // 5: вікно браузера з R
-  av(BRAND.accent, `<div style="width:640px;height:520px;border-radius:56px;background:#fff;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.25)">
-     <div style="height:110px;background:${BRAND.ink};display:flex;align-items:center;gap:22px;padding-left:50px">
-       <i style="width:30px;height:30px;border-radius:50%;background:#ff5f57"></i><i style="width:30px;height:30px;border-radius:50%;background:#febc2e"></i><i style="width:30px;height:30px;border-radius:50%;background:${BRAND.accent2}"></i></div>
-     <div style="height:410px;display:grid;place-items:center;font-size:270px;font-weight:800;color:${BRAND.ink};letter-spacing:-.06em;line-height:1"><div>R<span style="color:${BRAND.accent}">.</span></div></div></div>`),
-  // 6: градієнт фіолетовий → лайм
-  av(`linear-gradient(135deg, #8a7dff 0%, ${BRAND.accent} 45%, #2e21b8 100%)`, `<div style="font-size:560px;font-weight:800;color:#fff;letter-spacing:-.06em;line-height:1;margin-top:-40px;text-shadow:0 24px 60px rgba(20,10,90,.35)">R<span style="color:${BRAND.accent2}">.</span></div>`),
-  // 7: монограма RT з кільцем
-  av(BRAND.paper, `<div style="width:820px;height:820px;border-radius:50%;border:34px solid ${BRAND.accent};display:grid;place-items:center">
-     <div style="font-size:340px;font-weight:800;letter-spacing:-.07em;line-height:1;color:${BRAND.ink};margin-top:-30px">R<span style="color:${BRAND.accent}">T</span></div></div>`),
-  // 8: курсор + R (як «клік по сайту»)
-  av(BRAND.ink, `<div style="position:relative;font-size:560px;font-weight:800;color:${BRAND.accent};letter-spacing:-.06em;line-height:1;margin-top:-40px;margin-left:-120px">R<svg style="position:absolute;right:-230px;bottom:-120px" width="260" height="260" viewBox="0 0 24 24"><path d="M4 2l16 9-7 2-3 7z" fill="${BRAND.accent2}" stroke="${BRAND.ink}" stroke-width="1.2" stroke-linejoin="round"/></svg></div>`),
+  // 1: вікно браузера з макетом лендінгу і курсором
+  av(A, `<div style="position:relative">${browser(640, 520, `
+    <div style="position:absolute;left:60px;top:60px;width:300px;height:44px;border-radius:12px;background:${I}"></div>
+    <div style="position:absolute;left:60px;top:126px;width:220px;height:44px;border-radius:12px;background:${I}"></div>
+    <div style="position:absolute;left:60px;top:200px;width:180px;height:60px;border-radius:30px;background:${A}"></div>
+    <div style="position:absolute;right:60px;top:60px;width:170px;height:200px;border-radius:24px;background:#e9e7ff"></div>
+    <div style="position:absolute;left:60px;right:60px;bottom:40px;height:60px;display:flex;gap:20px"><i style="flex:1;border-radius:14px;background:#eeedf2"></i><i style="flex:1;border-radius:14px;background:#eeedf2"></i><i style="flex:1;border-radius:14px;background:#eeedf2"></i></div>`)}
+    ${cursor(220, 'right:-70px;bottom:-90px')}</div>`),
+  // 2: код </> на темному
+  av(I, `<div style="font-size:400px;font-weight:800;letter-spacing:-.04em;line-height:1;margin-top:-30px;color:${A}">&lt;<span style="color:${L2}">/</span>&gt;</div>`),
+  // 3: блискавка — «за 3 дні»
+  av(A, `<svg width="560" height="560" viewBox="0 0 24 24"><path d="M13.5 2 4.5 13.5h6.5L9.5 22l9.5-12h-6.8L13.5 2Z" fill="${L2}" stroke="${I}" stroke-width=".9" stroke-linejoin="round"/></svg>`),
+  // 4: телефон з повідомленнями (бот)
+  av(L2, `<div style="width:400px;height:720px;border-radius:70px;background:${I};padding:22px;box-shadow:0 30px 80px rgba(0,0,0,.25)">
+    <div style="width:100%;height:100%;border-radius:52px;background:#fff;padding:90px 34px;display:flex;flex-direction:column;gap:26px">
+      <i style="align-self:flex-start;width:240px;height:70px;border-radius:30px 30px 30px 8px;background:#eeedf2"></i>
+      <i style="align-self:flex-end;width:200px;height:70px;border-radius:30px 30px 8px 30px;background:${A}"></i>
+      <i style="align-self:flex-start;width:270px;height:110px;border-radius:30px 30px 30px 8px;background:#eeedf2"></i>
+      <i style="align-self:flex-end;width:150px;height:70px;border-radius:30px 30px 8px 30px;background:${A}"></i>
+    </div></div>`),
+  // 5: браузер + паперовий літачок Telegram (сайт + бот)
+  av(I, `<div style="position:relative">${browser(600, 480, `
+    <div style="position:absolute;inset:0;display:grid;place-items:center">${plane(260, A)}</div>`, A)}</div>`),
+  // 6: курсор великий на фіолетовому
+  av(A, `<svg width="560" height="560" viewBox="0 0 24 24" style="margin:60px 0 0 60px"><path d="M4 2l16 9-7 2-3 7z" fill="#fff" stroke="${I}" stroke-width=".8" stroke-linejoin="round"/><circle cx="19" cy="19" r="3" fill="${L2}" stroke="${I}" stroke-width=".8"/></svg>`),
+  // 7: стос «блоків» сторінки (як будується лендінг)
+  av(BRAND.paper, `<div style="display:grid;gap:30px;width:600px">
+    <i style="height:150px;border-radius:36px;background:${A}"></i>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px"><i style="height:150px;border-radius:36px;background:${I}"></i><i style="height:150px;border-radius:36px;background:${L2}"></i></div>
+    <i style="height:150px;border-radius:36px;background:${I}"></i></div>`),
+  // 8: паперовий літачок у колі
+  av(A, `<div style="width:720px;height:720px;border-radius:50%;background:${L2};display:grid;place-items:center">${plane(420, I)}</div>`),
 ];
 
 // ---------- обкладинки Highlights ----------
@@ -254,8 +269,7 @@ const JOBS = [
   ['09-portfolio-1-collage', more, 1080, 1350],
   ...CASES.slice(4, 7).map((c, i) => [`09-portfolio-${i + 2}-${c.site}`, caseSlide(c, i < 2), 1080, 1350]),
   ...CASES.slice(7).map(c => [`10-case-${c.site}`, caseSlide(c), 1080, 1350]),
-  ['profile-avatar', avatar, 1080, 1080],
-  ...AVATARS.map((h, i) => [`profile-avatar-${i + 2}`, h, 1080, 1080]),
+  ...AVATARS.map((h, i) => [`profile-avatar-${i + 1}`, h, 1080, 1080]),
   ...Object.entries(ICONS).map(([n, s], i) => [`highlight-${i + 1}-${n}`, highlight(s), 1080, 1920]),
   ['story-template', story, 1080, 1920],
 ];
