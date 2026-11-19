@@ -246,6 +246,22 @@ const highlight = (svg) => page(1080, 1920, `
   </div>
 </div>`);
 
+// ---------- обкладинка Facebook-сторінки ----------
+// 1640×924: на телефоні видно всю картинку, на компʼютері — смугу посередині (~1640×624).
+// Низ по центру лишаємо вільним: там стоїть фото профілю.
+const fbCover = page(1640, 924, `
+<div style="width:1640px;height:924px;background:${BRAND.ink};color:#fff;position:relative;overflow:hidden">
+  <div style="position:absolute;right:-200px;top:-260px;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle, rgba(91,75,255,.55), transparent 65%)"></div>
+  <div style="position:absolute;left:140px;top:200px;width:900px">
+    <span class="tag" style="color:#fff;font-size:24px"><i></i>Відкрито запис</span>
+    <div style="font-size:68px;line-height:1.06;font-weight:800;letter-spacing:-.045em;margin-top:30px">Сайти та&nbsp;Telegram&#8209;боти<br>для бізнесу за&nbsp;<span style="color:${BRAND.accent2}">3&nbsp;дні</span></div>
+    <div style="font-size:30px;color:#a9a8b0;margin-top:26px;font-weight:500">Лендінг від 2 500 ₴ · без щомісячних платежів</div>
+  </div>
+  ${phone(shot('nails', 'phone'), '--pw:220px;left:1050px;top:230px;transform:rotate(-8deg)')}
+  ${phone(shot('fitness', 'phone'), '--pw:240px;left:1210px;top:190px;z-index:2')}
+  ${phone(shot('psychologist', 'phone'), '--pw:220px;left:1385px;top:230px;transform:rotate(8deg)')}
+</div>`);
+
 // ---------- шаблон Stories ----------
 const story = page(1080, 1920, `
 <div class="f dark" style="padding:120px 84px">
@@ -272,6 +288,7 @@ const JOBS = [
   ...AVATARS.map((h, i) => [`profile-avatar-${i + 1}`, h, 1080, 1080]),
   ...Object.entries(ICONS).map(([n, s], i) => [`highlight-${i + 1}-${n}`, highlight(s), 1080, 1920]),
   ['story-template', story, 1080, 1920],
+  ['facebook-cover', fbCover, 1640, 924],
 ];
 
 (async () => {
