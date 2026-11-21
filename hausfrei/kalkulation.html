@@ -42,7 +42,7 @@ h2{font-size:clamp(23px,3.6vw,30px);margin-bottom:6px}
 .tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:20px;margin-left:6px;vertical-align:2px;white-space:nowrap}
 .us{background:#efe6d3;color:#7a5f2b}.ext{background:#e6ebf5;color:#30436e}.free{background:#e2f1e7;color:var(--ok)}.op{background:#f1e6f3;color:#6b3c78}
 .approx{color:var(--gold);font-weight:700}
-.plans{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.plans{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.plans.three{grid-template-columns:repeat(3,1fr)}.plans.three .pl{padding:20px}.plans.three .line{font-size:14px}
 .pl{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;position:relative}
 .pl.hl{border:2px solid var(--gold);box-shadow:0 18px 40px rgba(184,151,90,.16)}
 .pl.hl::before{content:"Рекомендуємо";position:absolute;top:-12px;left:20px;background:var(--gold);color:var(--navy2);font-size:12px;font-weight:700;padding:3px 10px;border-radius:20px}
@@ -62,6 +62,7 @@ h2{font-size:clamp(23px,3.6vw,30px);margin-bottom:6px}
 .inc{columns:2;column-gap:28px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px 26px;list-style:none}
 .inc li{break-inside:avoid;padding:4px 0 4px 24px;position:relative}.inc li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:700}
 footer{padding:40px 0 60px;color:var(--muted);font-size:13px}
+@media(max-width:900px){.plans.three{grid-template-columns:1fr}}
 @media(max-width:720px){.plans,.fc{grid-template-columns:1fr 1fr}.row{grid-template-columns:1fr}.p{text-align:left}.tl div{grid-template-columns:1fr;gap:2px}.inc{columns:1}}
 @media(max-width:480px){.plans,.fc{grid-template-columns:1fr}}
 @media print{body{background:#fff}.top{-webkit-print-color-adjust:exact;print-color-adjust:exact}section{break-inside:avoid}.row.tot,.pl .sum{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
@@ -96,7 +97,8 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:13px}
 <p class="sub">Можна підключити або вимкнути будь-якого місяця.</p>
 <div class="tbl">
 <div class="row"><div><b>Ведення сайту <span class="tag us">наша робота</span></b><small>Дрібні правки (тексти, ціни, фото, телефони) до 1 год на місяць, перевірка роботи сайту й форми, продовження домену і хостингу, оновлення Impressum і Datenschutz за змінами закону, резервна копія</small></div><div class="p">20 €<i>щомісяця</i></div></div>
-<div class="row opt"><div><b>Ведення Google Ads <span class="tag us">наша робота</span> <span class="tag op">за бажанням</span></b><small>Щотижнева оптимізація: прибираємо дорогі й нецільові запити, A/B-тести оголошень, звіт щомісяця (кліки, дзвінки, заявки, ціна заявки)</small></div><div class="p">100 €<i>щомісяця</i></div></div>
+<div class="row opt"><div><b>Ведення Google Ads: старт (бюджет до 100 €) <span class="tag us">наша робота</span> <span class="tag op">за бажанням</span></b><small>Щотижнева перевірка, мінус-слова, коригування ставок, короткий звіт щомісяця (кліки, дзвінки, заявки)</small></div><div class="p">30 €<i>щомісяця</i></div></div>
+<div class="row opt"><div><b>Ведення Google Ads: активне (бюджет від ≈ 300 €) <span class="tag us">наша робота</span> <span class="tag op">за бажанням</span></b><small>Оптимізація кілька разів на тиждень, окремі кампанії на послуги, A/B-тести оголошень, детальний звіт</small></div><div class="p">100 €<i>щомісяця</i></div></div>
 <div class="row opt"><div><b>Більші зміни поза пакетом</b><small>Новий блок, нова сторінка, редизайн розділу</small></div><div class="p">25 €<i>за годину</i></div></div>
 </div>
 </section>
@@ -110,14 +112,14 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:13px}
 <div class="row opt"><div><b>Перевірка юристом <span class="tag op">за бажанням</span></b><small>Для 100% юридичної впевненості</small></div><div class="p"><span class="approx">≈</span> 150–400 €<i>разово</i></div></div>
 <div class="row"><div><b>Google Business Profile (Maps) <span class="tag free">безкоштовно</span></b></div><div class="p">0 €</div></div>
 <div class="row"><div><b>Cookie-банер <span class="tag free">безкоштовно</span></b><small>Без реклами не потрібен. З Google Ads вистачає безкоштовного тарифу</small></div><div class="p">0 €</div></div>
-<div class="row opt"><div><b>Бюджет Google Ads <span class="tag ext">платиться Google</span> <span class="tag op">за бажанням</span></b><small>Рекомендований старт 500 €. Без USt-IdNr. Google додає 19% MwSt. Можна змінити або зупинити будь-якого дня</small></div><div class="p"><span class="approx">≈</span> 300–800 €<i>щомісяця</i></div></div>
+<div class="row opt"><div><b>Бюджет Google Ads <span class="tag ext">платиться Google</span> <span class="tag op">за бажанням</span></b><small>Ви самі задаєте ліміт: старт до 100 € (≈ 3,30 € на день), пізніше можна збільшити. Без USt-IdNr. Google додає 19% MwSt. Можна змінити або зупинити будь-якого дня</small></div><div class="p">до 100 €<i>щомісяця (на старті)</i></div></div>
 </div>
 </section>
 
 <section>
-<h2>4. Підсумок: два варіанти</h2>
+<h2>4. Підсумок: три варіанти</h2>
 <p class="sub">Наша робота за фіксованими цінами, сторонні сервіси приблизно.</p>
-<div class="plans">
+<div class="plans three">
 <div class="pl"><h3>Тільки сайт + Google Maps</h3>
 <div class="line"><span>Розробка сайту</span><span>100 €</span></div>
 <div class="line"><span>Запуск (домен, хостинг, пошта)</span><span>30 €</span></div>
@@ -127,30 +129,42 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:13px}
 <div class="sum"><span>Старт (разово)</span><span>180 €</span></div>
 <div class="sum"><span>Далі щомісяця</span><span>≈ 23–28 €</span></div>
 </div>
-<div class="pl hl"><h3>Сайт + Google Maps + реклама</h3>
+<div class="pl hl"><h3>Сайт + Maps + реклама «старт»</h3>
 <div class="line"><span>Сайт, запуск, Google Maps</span><span>180 €</span></div>
 <div class="line"><span>Налаштування Google Ads</span><span>100 €</span></div>
 <div class="line"><span>Ведення сайту</span><span>20 € / міс</span></div>
-<div class="line"><span>Ведення Google Ads</span><span>100 € / міс</span></div>
+<div class="line"><span>Ведення Google Ads «старт»</span><span>30 € / міс</span></div>
+<div class="line"><span>Бюджет Google (напряму Google)</span><span>до 100 € / міс</span></div>
+<div class="line"><span>Хостинг з доменом і поштою</span><span>≈ 3–8 € / міс</span></div>
+<div class="sum"><span>Старт (разово)</span><span>280 €</span></div>
+<div class="sum"><span>Далі щомісяця</span><span>≈ 153–158 €</span></div>
+</div>
+<div class="pl"><h3>Пізніше: активна реклама</h3>
+<div class="line"><span>Сайт, запуск, Google Maps</span><span>180 €</span></div>
+<div class="line"><span>Налаштування Google Ads</span><span>100 €</span></div>
+<div class="line"><span>Ведення сайту</span><span>20 € / міс</span></div>
+<div class="line"><span>Ведення Google Ads «активне»</span><span>100 € / міс</span></div>
 <div class="line"><span>Бюджет Google (напряму Google)</span><span>≈ 500 € / міс</span></div>
 <div class="line"><span>Хостинг з доменом і поштою</span><span>≈ 3–8 € / міс</span></div>
 <div class="sum"><span>Старт (разово)</span><span>280 €</span></div>
 <div class="sum"><span>Далі щомісяця</span><span>≈ 623–628 €</span></div>
 </div>
 </div>
-<p class="note">Рекламу краще тестувати <b>мінімум 2 місяці</b>: у перші 2–4 тижні Google «навчається», і ціна заявки ще висока. Бюджет реклами можна зменшити до ≈ 300 € або збільшити будь-якого дня.</p>
+<p class="note">Рекламу краще тестувати <b>мінімум 2 місяці</b>: у перші 2–4 тижні Google «навчається». Якщо «старт» дає замовлення, бюджет можна поступово збільшувати будь-якого дня.</p>
 </section>
 
 <section>
 <h2>5. Прогноз реклами (приблизно)</h2>
-<p class="sub">Для бюджету ≈ 500 € на місяць. Ціну кліку я оцінив сам, точну покаже Google Keyword Planner на старті.</p>
-<div class="fc">
-<div class="f"><b>≈ 2–4 €</b><span>ціна кліку</span></div>
-<div class="f"><b>≈ 125–250</b><span>відвідувачів сайту / міс</span></div>
-<div class="f"><b>≈ 10–25</b><span>дзвінків і заявок / міс</span></div>
-<div class="f"><b>≈ 3–8</b><span>замовлень / міс</span></div>
+<p class="sub">Ціну кліку я оцінив сам, точну покаже Google Keyword Planner на старті.</p>
+<div class="tbl">
+<div class="row" style="grid-template-columns:1.3fr 1fr 1fr"><div><b>Показник</b></div><div class="p">«Старт»: до 100 € / міс</div><div class="p">Активна: ≈ 500 € / міс</div></div>
+<div class="row" style="grid-template-columns:1.3fr 1fr 1fr"><div>Бюджет на день</div><div class="p">≈ 3,30 €</div><div class="p">≈ 16 €</div></div>
+<div class="row" style="grid-template-columns:1.3fr 1fr 1fr"><div>Ціна кліку</div><div class="p">≈ 1,50–3 €<i>з обмеженням ставки</i></div><div class="p">≈ 2–4 €</div></div>
+<div class="row" style="grid-template-columns:1.3fr 1fr 1fr"><div>Відвідувачів сайту</div><div class="p">≈ 30–60</div><div class="p">≈ 125–250</div></div>
+<div class="row" style="grid-template-columns:1.3fr 1fr 1fr"><div>Дзвінків і заявок</div><div class="p">≈ 3–6</div><div class="p">≈ 10–25</div></div>
+<div class="row tot" style="grid-template-columns:1.3fr 1fr 1fr"><div><b>Замовлень на місяць</b></div><div class="p">≈ 1–2</div><div class="p">≈ 3–8</div></div>
 </div>
-<p class="note">Якщо одне звільнення квартири коштує ≈ 800–2 000 €, реклама окупається вже з 1–2 замовлень на місяць. Це орієнтир, а не гарантія. Найбільше на результат впливає швидкість, з якою відповідають на дзвінки.</p>
+<p class="note"><b>Як економимо на «старті»:</b> ручна ставка з лімітом (наприклад, макс. 2 € за клік), тільки точні запити («Wohnungsauflösung Augsburg», «Entrümpelung Augsburg Kosten»), мінус-слова (kostenlos, selber, Container mieten, Job …), радіус 15–20 км, показ тільки в робочі години, кнопка дзвінка в оголошенні, без медійної мережі.<br><br>Якщо одне замовлення коштує ≈ 800–2 000 €, реклама окупається вже з 1 замовлення. Але на бюджеті до 100 € можливі й місяці без замовлень, тож перші 2 місяці — тест. Безкоштовно результат підсилять картка в Google Maps з відгуками й оголошення на Kleinanzeigen.de.</p>
 </section>
 
 <section>
